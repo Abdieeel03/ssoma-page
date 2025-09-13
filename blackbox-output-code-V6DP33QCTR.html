@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seguridad Industrial Perú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f9fafb;
+            color: #333;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header img {
+            height: 50px;
+        }
+        header h1 {
+            margin: 0 0 0 15px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            flex-grow: 1;
+        }
+        nav a {
+            color: white;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+            height: 400px;
+            border-radius: 12px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 40px;
+            box-shadow: inset 0 0 0 1000px rgba(0, 64, 128, 0.6);
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+        .btn-primary {
+            background-color: #ffcc00;
+            color: #004080;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: #e6b800;
+        }
+        h2.section-title {
+            text-align: center;
+            color: #004080;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+        .service-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-content h3 {
+            margin-top: 0;
+            color: #004080;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        .service-content p {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        .service-content a.btn-secondary {
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .service-content a.btn-secondary:hover {
+            background-color: #003366;
+        }
+        /* Certificados */
+        .certificates {
+            background-color: #e6f0ff;
+            padding: 40px 20px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 60px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .certificates h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .certificates-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .certificate-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+        .certificate-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #004080;
+        }
+        .certificate-item a {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #004080;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .certificate-item a:hover {
+            background-color: #e6b800;
+        }
+        /* Contacto */
+        .contact-section {
+            max-width: 900px;
+            margin: 60px auto 80px;
+            padding: 0 20px;
+        }
+        .contact-section h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 1.1rem;
+            color: #333;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: #004080;
+            flex-shrink: 0;
+        }
+        /* Testimonios */
+        .testimonials {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .testimonials h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 25px 30px;
+            font-style: italic;
+            position: relative;
+            color: #555;
+        }
+        .testimonial-card::before {
+            content: "“";
+            font-size: 4rem;
+            color: #ffcc00;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-weight: 700;
+        }
+        .testimonial-text {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: #004080;
+            text-align: right;
+        }
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 40px;
+            font-size: 0.9rem;
+        }
+        /* WhatsApp Chat Button */
+        #whatsapp-chat {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10000;
+            transition: background-color 0.3s ease;
+        }
+        #whatsapp-chat:hover {
+            background-color: #1ebe57;
+        }
+        #whatsapp-chat svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            header h1 {
+                margin: 10px 0 0 0;
+                text-align: center;
+                flex-grow: 0;
+            }
+            nav {
+                text-align: center;
+                padding: 10px 0;
+                width: 100%;
+            }
+            nav a {
+                margin: 0 10px;
+                display: inline-block;
+            }
+            .hero {
+                height: 300px;
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Empresa Seguridad Industrial" />
+        <h1>Seguridad Industrial Perú</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#certificados">Certificados</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Protegiendo tu proyecto, cuidando tu gente</h2>
+        <p>Supervisión, auditorías, capacitaciones y sistemas de gestión en seguridad, salud y medio ambiente en Perú.</p>
+        <a href="#contacto" class="btn-primary">Contáctanos</a>
+    </section>
+
+    <div class="container">
+        <section id="servicios">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581093588401-7a7a7a7a7a7a?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Supervisión de Proyectos</h3>
+                        <p>Monitoreamos y aseguramos el cumplimiento de las normas de seguridad en tus proyectos industriales en Perú.</p>
+                        <a href="#contacto" class="btn-secondary">Solicitar Servicio</a>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Auditorías</h3>
+                        <p>Realizamos auditorías conforme a las normativas del Ministerio de Trabajo para garantizar la seguridad y salud laboral.</p>
+                        <a href="#contacto" class="btn-secondary">Solicitar Auditoría</a>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Sistemas de Gestión</h3>
+                        <p>Implementamos sistemas integrados de seguridad, salud en el trabajo y medio ambiente adaptados a tu empresa.</p>
+                        <a href="#contacto" class="btn-secondary">Más Información</a>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1521790366320-3a1a1a1a1a1a?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Capacitaciones</h3>
+                        <p>Capacitamos a tu equipo según las exigencias del Ministerio de Trabajo para un ambiente laboral seguro.</p>
+                        <a href="#certificados" class="btn-secondary">Ver Certificados</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="certificados" class="certificates">
+            <h2>Acceso a Certificados de Capacitación</h2>
+            <div class="certificates-list">
+                <div class="certificate-item">
+                    <h3>Certificado de Seguridad Industrial</h3>
+                    <a href="certificados/certificado-seguridad.pdf" target="_blank" download>Descargar PDF</a>
+                </div>
+                <div class="certificate-item">
+                    <h3>Certificado de Salud en el Trabajo</h3>
+                    <a href="certificados/certificado-salud.pdf" target="_blank" download>Descargar PDF</a>
+                </div>
+                <div class="certificate-item">
+                    <h3>Certificado de Medio Ambiente</h3>
+                    <a href="certificados/certificado-medioambiente.pdf" target="_blank" download>Descargar PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="testimonials">
+            <h2>Testimonios de Nuestros Clientes</h2>
+            <div class="testimonial-cards">
+                <article class="testimonial-card">
+                    <p class="testimonial-text">"La supervisión y auditorías realizadas por Seguridad Industrial Perú nos ayudaron a mejorar significativamente la seguridad en nuestra planta. Profesionales y comprometidos."</p>
+                    <p class="testimonial-author">- Juan Pérez, Gerente de Operaciones, Industrias ABC</p>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-text">"Las capacitaciones fueron muy completas y adaptadas a nuestras necesidades. El equipo está mejor preparado para cumplir con las normativas del Ministerio de Trabajo."</p>
+                    <p class="testimonial-author">- María López, Jefa de Recursos Humanos, Construcciones XYZ</p>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-text">"Excelente servicio en la implementación del sistema de gestión ambiental. Nos ayudaron a cumplir con los estándares y mejorar nuestro impacto ambiental."</p>
+                    <p class="testimonial-author">- Carlos Ramírez, Director de Medio Ambiente, Agroexport S.A.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                        <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18v-9l8 7 8-7v9H4z"/>
+                    </svg>
+                    <span>contacto@seguridadindustrial.pe</span>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11l-2.24 2.13z"/>
+                    </svg>
+                    <span>+51 987 654 321</span>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSOMA - Seguridad Industrial</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <div class="logo-placeholder">
+                        <img src="./resources/img/logo2.png" alt="SSOMA Logo">
+                    </div>
+                    <!--<span class="company-name">SSOMA INVERSIONES</span>-->
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#clientes" class="nav-link">Nuestros Clientes</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Carrusel de Servicios -->
+    <section id="inicio" class="hero-carousel">
+        <div class="carousel-container">
+            <!-- Slide 1: Supervisión de Proyectos -->
+            <div class="carousel-slide active" data-service="evaluaciones">
+                <div class="slide-background"
+                    style="background-image: linear-gradient(rgba(11, 64, 128, 0.3), rgba(13, 74, 143, 0.2)), url('resources/img/supervision-proyectos.jpeg');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h1 class="slide-title">Supervisión de Proyectos</h1>
+                            <p class="slide-description">
+                                Monitoreo y control de proyectos para garantizar el cumplimiento de estándares de
+                                seguridad.
+                                Supervisamos cada etapa para asegurar la excelencia y prevención de riesgos.
+                            </p>
+                            <div class="slide-buttons">
+                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                                <button class="btn btn-secondary carousel-modal-btn" data-service="evaluaciones">Saber
+                                    Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Consultoría -->
+            <div class="carousel-slide" data-service="consultoria">
+                <div class="slide-background"
+                    style="background-image: linear-gradient(rgba(11, 64, 128, 0.3), rgba(13, 74, 143, 0.2)), url('resources/img/consultoria.jpeg');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h1 class="slide-title">Consultoría</h1>
+                            <p class="slide-description">
+                                Asesoría especializada para implementar sistemas de gestión en seguridad y salud
+                                ocupacional.
+                                Transformamos tu empresa con soluciones integrales y personalizadas.
+                            </p>
+                            <div class="slide-buttons">
+                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                                <button class="btn btn-secondary carousel-modal-btn" data-service="consultoria">Saber
+                                    Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Asesoría para Certificaciones ISO -->
+            <div class="carousel-slide" data-service="ohsas">
+                <div class="slide-background"
+                    style="background-image: linear-gradient(rgba(11, 64, 128, 0.3), rgba(13, 74, 143, 0.2)), url('resources/img/asesoria.jpeg');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h1 class="slide-title">Asesoría para Certificaciones ISO</h1>
+                            <p class="slide-description">
+                                Apoyo en la implementación y mantenimiento de sistemas de gestión conforme a las normas
+                                ISO.
+                                Te acompañamos hacia la certificación ISO 9001, 14001, 45001 y 17025.
+                            </p>
+                            <div class="slide-buttons">
+                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                                <button class="btn btn-secondary carousel-modal-btn" data-service="ohsas">Saber
+                                    Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Auditorías -->
+            <div class="carousel-slide" data-service="auditorias">
+                <div class="slide-background"
+                    style="background-image: linear-gradient(rgba(11, 64, 128, 0.3), rgba(13, 74, 143, 0.2)), url('resources/img/auditorias.jpg');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h1 class="slide-title">Auditorías</h1>
+                            <p class="slide-description">
+                                Evaluaciones exhaustivas de tus procesos de seguridad para identificar oportunidades de
+                                mejora.
+                                Garantizamos el cumplimiento normativo y la excelencia operacional.
+                            </p>
+                            <div class="slide-buttons">
+                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                                <button class="btn btn-secondary carousel-modal-btn" data-service="auditorias">Saber
+                                    Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Capacitaciones -->
+            <div class="carousel-slide" data-service="capacitaciones">
+                <div class="slide-background"
+                    style="background-image: linear-gradient(rgba(11, 64, 128, 0.3), rgba(13, 74, 143, 0.2)), url('resources/img/capacitaciones.jpg');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h1 class="slide-title">Capacitaciones</h1>
+                            <p class="slide-description">
+                                Capacitación en Sistema de Gestión de Calidad, Seguridad Industrial, Salud en el Trabajo
+                                y Medio Ambiente para organizaciones públicas y privadas.
+                                Formamos líderes en prevención y cuidado laboral.
+                            </p>
+                            <div class="slide-buttons">
+                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                                <button class="btn btn-secondary carousel-modal-btn" data-service="capacitaciones">Saber
+                                    Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Salud Ocupacional -->
+            <div class="carousel-slide" data-service="ambiental">
+                <div class="slide-background"
+                    style="background-image: linear-gradient(rgba(11, 64, 128, 0.3), rgba(13, 74, 143, 0.2)), url('resources/img/salud-ocupacional.jpeg');">
+                    <div class="container">
+                        <div class="slide-content">
+                            <h1 class="slide-title">Salud Ocupacional</h1>
+                            <p class="slide-description">
+                                Implementación de programas de salud ocupacional para promover el bienestar de los
+                                trabajadores.
+                                Protegemos la salud de tu equipo mientras optimizamos las operaciones.
+                            </p>
+                            <div class="slide-buttons">
+                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                                <button class="btn btn-secondary carousel-modal-btn" data-service="ambiental">Saber
+                                    Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles del Carrusel -->
+        <div class="carousel-controls">
+            <button class="carousel-btn carousel-prev" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn carousel-next" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Información del Slide Actual -->
+        <div class="carousel-info">
+            <span class="slide-counter">
+                <span class="current-slide">1</span> / <span class="total-slides">6</span>
+            </span>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="nosotros">
+        <div class="container">
+            <h2 class="section-title">¿Quiénes Somos?</h2>
+            <div class="nosotros-grid">
+                <div class="nosotros-content">
+                    <div class="about-card">
+                        <h3>Nuestra Empresa</h3>
+                        <p>
+                            Somos una empresa peruana conformada por un equipo multidisciplinario de profesionales
+                            especializados en supervisión de proyectos, capacitaciones, auditorías y monitoreos SSOMA.
+                            Ofrecemos soluciones integrales, inteligentes y rentables en sectores como minería,
+                            industria, hidrocarburos, transporte, edificaciones y energía, aplicando altos estándares de
+                            calidad, seguridad, responsabilidad social y cuidado ambiental para responder con eficacia a
+                            las necesidades de nuestros clientes y ejecutar proyectos de diversa complejidad con éxito.
+                        </p>
+                    </div>
+                </div>
+                <div class="vision-mission">
+                    <div class="vm-card">
+                        <div class="vm-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Nuestra Visión</h3>
+                        <p>
+                            Ser la empresa líder en prevención de riesgos en SSOMA en Perú.
+                        </p>
+                    </div>
+                    <div class="vm-card">
+                        <div class="vm-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Nuestra Misión</h3>
+                        <p>
+                            Somos SSOMA Inversiones, impulsamos el desarrollo de estrategias para la prevención de
+                            eventos. Contamos con un equipo de profesionales especialistas y trabajamos integralmente,
+                            para hacer de su empresa, un referente ante las demás.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Soluciones integrales para la seguridad de tu empresa</p>
+            <div class="servicios-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="./resources/img/supervision-proyectos.jpeg" alt="supervisión de proyectos">
+                    </div>
+                    <div class="service-content">
+                        <h3>Supervisión de Proyectos</h3>
+                        <p>Monitoreo y control de proyectos para garantizar el cumplimiento de estándares de seguridad.
+                        </p>
+                        <a href="#" class="btn btn-outline service-info-btn" data-service="evaluaciones">Más
+                            Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="./resources/img/consultoria.jpeg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>Consultoría</h3>
+                        <p>Asesoría especializada para implementar sistemas de gestión en seguridad y salud ocupacional.
+                        </p>
+                        <a href="#" class="btn btn-outline service-info-btn" data-service="consultoria">Más
+                            Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="./resources/img/asesoria.jpeg" alt="asesoría iso">
+                    </div>
+                    <div class="service-content">
+                        <h3>Asesoría para Certificaciones y seguimiento en las normas: ISO 9001, ISO 14001, ISO 45001,
+                            ISO 17025</h3>
+                        <p>Apoyo en la implementación y mantenimiento de sistemas de gestión conforme a las normas ISO.
+                        </p>
+                        <a href="#" class="btn btn-outline service-info-btn" data-service="ohsas">Más Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="./resources/img/auditorias.jpg" alt="auditorías">
+                    </div>
+                    <div class="service-content">
+                        <h3>Auditorías</h3>
+                        <p>Evaluaciones exhaustivas de tus procesos de seguridad para identificar oportunidades de
+                            mejora.</p>
+                        <a href="#" class="btn btn-outline service-info-btn" data-service="auditorias">Más
+                            Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="./resources/img/capacitaciones.jpg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>Capacitaciones</h3>
+                        <p>Capacitación en Sistema de Gestión de Calidad, Seguridad Industrial, Salud en el Trabajo y
+                            Medio Ambiente para organizaciones públicas y privadas.</p>
+                        <a href="#" class="btn btn-outline service-info-btn" data-service="capacitaciones">Más
+                            Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="./resources/img/salud-ocupacional.jpeg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>Salud Ocupacional</h3>
+                        <p>Implementación de programas de salud ocupacional para promover el bienestar de los
+                            trabajadores.</p>
+                        <a href="#" class="btn btn-outline service-info-btn" data-service="ambiental">Más
+                            Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Clientes Section -->
+    <section id="clientes" class="clientes">
+        <div class="container">
+            <h2 class="section-title">Nuestros Clientes</h2>
+            <p class="section-subtitle">Empresas que confían en nuestros servicios de seguridad industrial</p>
+            <div class="clientes-grid">
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/bisa.png" alt="Cliente 1" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/bosch.png" alt="Cliente 2" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/clorox.png" alt="Cliente 3" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/consorcio-proyecto-selva.png" alt="Cliente 4" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/luz-del-sur.png" alt="Cliente 5" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/southern-copper.png" alt="Cliente 6" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/tumi.png" alt="Cliente 7" loading="lazy">
+                </div>
+                <div class="cliente-logo">
+                    <img src="./resources/img/clientes/votorantim.png" alt="Cliente 8" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <div class="contacto-content-simple">
+                <div class="contacto-info-center">
+                    <h2 class="section-title">Contáctanos</h2>
+                    <p>¿Listo para mejorar la seguridad de tu empresa? Ponte en contacto con nosotros.</p>
+                    <div class="contact-details-center">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>[correo@ssoma.com]</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>[+XX XXX XXX XXXX]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="./resources/img/logo.png" alt="SSOMA Logo">
+                        <span class="company-name">SSOMA INVERSIONES</span>
+                    </div>
+                    <p>Líderes en seguridad industrial, comprometidos con proteger tu empresa y tu equipo.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="#servicios">Supervisión de Proyectos</a></li>
+                            <li><a href="#servicios">Consultoría</a></li>
+                            <li><a href="#servicios">Asesoría ISO</a></li>
+                            <li><a href="#servicios">Auditorías</a></li>
+                            <li><a href="#servicios">Capacitaciones</a></li>
+                            <li><a href="#servicios">Salud Ocupacional</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="#nosotros">Nosotros</a></li>
+                            <li><a href="#clientes">Nuestros Clientes</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SSOMA INVERSIONES. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para Servicios -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i id="modalIcon" class="fas fa-shield-alt"></i>
+                </div>
+                <h2 id="modalTitle">Título del Servicio</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Imagen del servicio">
+                </div>
+                <div class="modal-details">
+                    <ul id="modalIncludes">
+                        <li>Punto descriptivo 1</li>
+                        <li>Punto descriptivo 2</li>
+                        <li>Punto descriptivo 3</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-cta">
+                    <p>¿Interesado en este servicio?</p>
+                    <div class="modal-buttons">
+                        <a href="#contacto" class="btn btn-primary modal-contact">Solicitar Cotización</a>
+                        <button class="btn btn-secondary modal-close-btn">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
