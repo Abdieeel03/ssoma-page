@@ -156,9 +156,15 @@ h4 { font-size: 1.25rem; }
     gap: 12px;
 }
 
+.logo-container img{
+    height: 100%;
+    width: 200px;
+    object-fit: contain;
+}
+
 .logo-placeholder {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
