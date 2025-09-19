@@ -372,4 +372,40 @@ document.addEventListener('DOMContentLoaded', () => {
             openServiceModal(serviceType);
         });
     });
+
+    // Efecto de scroll para el logo de SSOMA
+    const logoGrande = document.querySelector('.ssoma-logo-grande img');
+    const testimoniosSection = document.querySelector('#clientes');
+    
+    if (logoGrande && testimoniosSection) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const logoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    logoGrande.style.transform = 'scale(1.1)';
+                } else {
+                    logoGrande.style.transform = 'scale(1)';
+                }
+            });
+        }, observerOptions);
+
+        logoObserver.observe(testimoniosSection);
+
+        // Efecto adicional basado en scroll dentro de la sección
+        window.addEventListener('scroll', () => {
+            const rect = testimoniosSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (rect.top <= windowHeight && rect.bottom >= 0) {
+                const scrollProgress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight));
+                const scaleValue = 1 + (scrollProgress * 0.2); // Escala de 1 a 1.2
+                logoGrande.style.transform = `scale(${scaleValue})`;
+            }
+        });
+    }
 });

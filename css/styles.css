@@ -142,7 +142,7 @@ h4 { font-size: 1.25rem; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 20px;
+    padding: 0.5rem 20px;
 }
 
 .nav-brand {
@@ -153,18 +153,12 @@ h4 { font-size: 1.25rem; }
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-
-.logo-container img{
-    height: 100%;
-    width: 200px;
-    object-fit: contain;
+    gap: 8px;
 }
 
 .logo-placeholder {
-    width: 150px;
-    height: auto;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,6 +168,19 @@ h4 { font-size: 1.25rem; }
 .logo-placeholder img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
+}
+
+/* Nuevo logo del Ministerio de Trabajo */
+.min-trabajo-logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.min-trabajo-logo img {
+    height: 100%;
+    width: auto;
     object-fit: contain;
 }
 
@@ -191,7 +198,7 @@ h4 { font-size: 1.25rem; }
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -199,6 +206,7 @@ h4 { font-size: 1.25rem; }
     color: var(--text-dark);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.85rem;
     transition: var(--transition);
     position: relative;
 }
@@ -256,8 +264,8 @@ h4 { font-size: 1.25rem; }
 /* Hero Carousel Section */
 .hero-carousel {
     position: relative;
-    height: 70vh;
-    min-height: 500px;
+    height: 80vh;
+    min-height: 600px;
     overflow: hidden;
 }
 
@@ -522,7 +530,7 @@ section {
 
 /* Servicios */
 .servicios {
-    background: var(--background-color);
+    background: white;
 }
 
 .servicios-grid {
@@ -728,52 +736,248 @@ section {
     font-size: 1rem;
 }
 
-/* Nuestros Clientes */
+/* Nuestros Clientes - Nuevo Diseño */
 .clientes {
-    background: var(--white);
+    background: linear-gradient(135deg, #f0f4f8 0%, #e6f0fa 100%);
     padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.clientes .section-subtitle {
+/* Elemento decorativo de curvatura superior */
+.elementor-shape {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.elementor-shape-top {
+    top: 0;
+}
+
+.elementor-shape svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.elementor-shape-fill {
+    fill: var(--white);
+}
+
+/* Efecto ola en el borde superior - DESHABILITADO (usando SVG ahora) */
+/*
+.clientes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--white);
+    clip-path: ellipse(100% 40px at 50% 0%);
+    transform: translateY(-20px);
+}
+*/
+
+.clientes .section-title {
     text-align: center;
-    color: var(--text-light);
-    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-size: 2.2rem;
+    font-weight: 700;
     margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    z-index: 2;
 }
 
-.clientes-grid {
+/* Layout principal con testimonios a la izquierda y logo a la derecha */
+.clientes-testimonios-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Testimonios con fotos en columnas */
+.testimonios-con-fotos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    .clientes-testimonios-layout {
+        grid-template-columns: 1fr 250px;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .clientes-testimonios-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .testimonios-con-fotos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonios-con-fotos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.testimonio-con-foto {
+    display: flex;
+    gap: 1.2rem;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    align-items: flex-start;
+}
+
+.testimonio-con-foto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonio-foto {
+    flex-shrink: 0;
+}
+
+.testimonio-foto img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary-color);
+}
+
+.testimonio-info {
+    flex: 1;
+}
+
+.estrellas {
+    display: flex;
+    gap: 0.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.estrellas i {
+    color: #ffc107;
+    font-size: 0.85rem;
+}
+
+.testimonio-info h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.testimonio-texto {
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.cargo {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.empresa {
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Logo grande de SSOMA con animación scroll */
+.ssoma-logo-grande {
+    position: sticky;
+    top: 100px;
+    text-align: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(11, 64, 128, 0.1);
+    border: 2px solid rgba(11, 64, 128, 0.05);
+    z-index: 2;
+}
+
+.ssoma-logo-grande img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.ssoma-logo-grande:hover img {
+    transform: scale(1.05);
+}
+
+/* Sección de logos de clientes */
+.clientes-logos-section {
+    border-top: 2px solid #e5e5e5;
+    padding-top: 3rem;
+}
+
+.clientes-grid,
+.clientes-grid-adicional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
     align-items: center;
     justify-items: center;
+    margin-bottom: 2rem;
 }
 
 .cliente-logo {
     background: var(--white);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
     transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
+    height: 100px;
     width: 100%;
-    max-width: 200px;
+    max-width: 160px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .cliente-logo:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
 
 .cliente-logo img {
     max-width: 100%;
-    max-height: 80px;
+    max-height: 60px;
     object-fit: contain;
     filter: grayscale(100%);
     transition: var(--transition);
@@ -782,80 +986,6 @@ section {
 .cliente-logo:hover img {
     filter: grayscale(0%);
     transform: scale(1.05);
-}
-
-/* Testimonios */
-.testimonios-section {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid #e5e5e5;
-}
-
-.testimonios-title {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 2.5rem;
-    font-weight: 600;
-}
-
-.testimonios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.testimonio-card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-    border-left: 4px solid var(--secondary-color);
-}
-
-.testimonio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.testimonio-quote {
-    margin-bottom: 1.5rem;
-}
-
-.testimonio-quote .fa-quote-left {
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.testimonio-quote p {
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin: 0;
-}
-
-.testimonio-author {
-    border-top: 1px solid #f0f0f0;
-    padding-top: 1rem;
-}
-
-.author-info h4 {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.25rem 0;
-}
-
-.author-info span {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    font-weight: 400;
 }
 
 /* Contacto */
@@ -951,7 +1081,7 @@ section {
     gap: 1rem;
 }
 
-.contact-item i {
+.contacto .contact-item i {
     width: 40px;
     height: 40px;
     background: var(--secondary-color);
@@ -1054,13 +1184,14 @@ section {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
 }
 
 .footer-column h4 {
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 .footer-column ul {
@@ -1068,7 +1199,7 @@ section {
 }
 
 .footer-column ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .footer-column a {
@@ -1076,11 +1207,35 @@ section {
     text-decoration: none;
     opacity: 0.8;
     transition: var(--transition);
+    font-size: 0.85rem;
 }
 
 .footer-column a:hover {
     opacity: 1;
     color: var(--secondary-color);
+}
+
+/* Estilos para la columna de contacto */
+.footer-column .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-column .contact-info .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--white);
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
+.footer-column .contact-info .contact-item i {
+    color: var(--secondary-color);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .social-links {
@@ -1097,12 +1252,21 @@ section {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-links a i {
+    color: white;
+    font-size: 1.2rem;
 }
 
 .social-links a:hover {
     background: var(--secondary-color);
-    color: var(--text-dark);
     transform: translateY(-3px);
+}
+
+.social-links a:hover i {
+    color: var(--text-dark);
 }
 
 .footer-bottom {
@@ -1212,8 +1376,12 @@ section {
     }
     
     .logo-placeholder {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .min-trabajo-logo {
+        display: none;
     }
     
     .company-name {
@@ -1221,8 +1389,8 @@ section {
     }
     
     .hero-carousel {
-        height: 75vh;
-        min-height: 550px;
+        height: 80vh;
+        min-height: 600px;
     }
     
     .slide-background {
@@ -1307,8 +1475,45 @@ section {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
     
-    .clientes-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Nuevo diseño de clientes responsive */
+    .clientes-testimonios-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .ssoma-logo-grande {
+        position: relative;
+        top: auto;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .ssoma-logo-grande img {
+        max-width: 200px;
+    }
+    
+    .testimonio-con-foto {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .testimonio-foto img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .clientes-grid,
+    .clientes-grid-adicional {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .cliente-logo {
+        height: 80px;
+        max-width: 140px;
+        padding: 1rem;
     }
     
     .servicios-grid {
@@ -1349,6 +1554,7 @@ section {
     
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
@@ -1401,8 +1607,8 @@ section {
     }
     
     .hero-carousel {
-        height: 65vh;
-        min-height: 480px;
+        height: 70vh;
+        min-height: 520px;
     }
     
     .slide-content {
@@ -1447,8 +1653,12 @@ section {
     }
     
     .logo-placeholder {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .min-trabajo-logo {
+        height: 30px;
     }
     
     .company-name {
@@ -1460,12 +1670,44 @@ section {
     .service-content,
     .cliente-logo,
     .contacto-form {
+        padding: 0.8rem;
+    }
+    
+    .service-card {
+        padding: 0.8rem;
+    }
+    
+    .cliente-logo {
+        height: 70px;
+        max-width: 130px;
+        padding: 0.8rem;
+    }
+    
+    .cliente-logo img {
+        max-height: 50px;
+    }
+    
+    .clientes-grid,
+    .clientes-grid-adicional {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .testimonio-con-foto {
         padding: 1.2rem;
     }
     
-    .clientes-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .testimonio-foto img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .testimonio-texto {
+        font-size: 0.9rem;
+    }
+    
+    .ssoma-logo-grande img {
+        max-width: 150px;
     }
     
     .testimonios-grid {
@@ -1474,7 +1716,15 @@ section {
     }
     
     .testimonio-card {
-        padding: 1.2rem;
+        padding: 0.8rem;
+    }
+    
+    .testimonio-quote p {
+        font-size: 0.9rem;
+    }
+    
+    .author-info h4 {
+        font-size: 1rem;
     }
     
     .testimonios-title {
@@ -1514,6 +1764,7 @@ section {
     
     .footer-links {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .footer-logo img {
@@ -1922,5 +2173,434 @@ textarea:focus {
     
     .service-content {
         padding: 1.2rem;
+    }
+}
+
+/* Media query para zoom alto y pantallas pequeñas como 720p */
+@media (max-width: 1366px) and (max-height: 768px) {
+    /* Reducir tamaños de fuente para zoom alto */
+    html {
+        font-size: 14px; /* Reduce el tamaño base de rem */
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.1rem; }
+    
+    /* Hero Section */
+    .hero-carousel {
+        height: 70vh;
+        min-height: 450px;
+    }
+    
+    .slide-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+    }
+    
+    .slide-description {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 1.2rem;
+    }
+    
+    .slide-content {
+        padding-top: 30px;
+        max-width: 500px;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Header */
+    .header .container {
+        padding: 0.4rem 16px;
+    }
+    
+    .logo-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .min-trabajo-logo {
+        height: 35px;
+    }
+    
+    /* Secciones */
+    section {
+        padding: 3.5rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Cards */
+    .service-card,
+    .certificado-card,
+    .testimonio-card {
+        padding: 1rem;
+    }
+    
+    .about-card,
+    .vm-card {
+        padding: 1.2rem;
+    }
+    
+    .cliente-logo {
+        height: 100px;
+        max-width: 160px;
+        padding: 1.2rem;
+    }
+    
+    .cliente-logo img {
+        max-height: 70px;
+    }
+    
+    /* Testimonios */
+    .testimonios-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    
+    .testimonio-quote p {
+        font-size: 0.95rem;
+    }
+    
+    /* Certificados */
+    .certificados .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .certificado-icon {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .certificado-icon i {
+        font-size: 1.6rem;
+    }
+    
+    .certificado-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .certificado-download {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Contacto */
+    .contacto-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .contacto-item {
+        font-size: 0.95rem;
+    }
+    
+    /* Footer */
+    .footer h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer a,
+    .footer p {
+        font-size: 0.9rem;
+    }
+    
+    /* Controles del carrusel */
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .carousel-info {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Media query específica para resoluciones 720p */
+@media (max-width: 1280px) and (max-height: 720px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .hero-carousel {
+        height: 60vh;
+        min-height: 380px;
+    }
+    
+    .slide-title {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .slide-description {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    section {
+        padding: 2.5rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; }
+    h4 { font-size: 1rem; }
+    
+    .service-card,
+    .certificado-card,
+    .testimonio-card {
+        padding: 0.8rem;
+    }
+    
+    .about-card,
+    .vm-card {
+        padding: 1rem;
+    }
+    
+    .cliente-logo {
+        height: 75px;
+        max-width: 140px;
+        padding: 0.8rem;
+    }
+    
+    .cliente-logo img {
+        max-height: 55px;
+    }
+    
+    .testimonio-quote p {
+        font-size: 0.85rem;
+    }
+    
+    .nav-link {
+        font-size: 0.75rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Controles del carrusel más pequeños */
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-info {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.75rem;
+        top: 0.8rem;
+        right: 0.8rem;
+    }
+}
+
+/* Media query específica para zoom 175% en pantallas 1920x1080 */
+@media (max-width: 1100px) and (min-width: 800px) {
+    html {
+        font-size: 13px;
+    }
+    
+    /* Header compacto */
+    .header .container {
+        padding: 0.3rem 16px;
+    }
+    
+    .logo-placeholder {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .min-trabajo-logo {
+        height: 30px;
+    }
+    
+    /* Hero más compacto */
+    .hero-carousel {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .slide-title {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 0.6rem;
+    }
+    
+    .slide-description {
+        font-size: 0.9rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    .slide-content {
+        padding-top: 25px;
+        max-width: 450px;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Secciones más compactas */
+    section {
+        padding: 2.5rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Cards más pequeñas */
+    .service-card,
+    .certificado-card,
+    .testimonio-card,
+    .about-card,
+    .vm-card {
+        padding: 0.8rem;
+    }
+    
+    .cliente-logo {
+        height: 85px;
+        max-width: 150px;
+        padding: 1rem;
+    }
+    
+    .cliente-logo img {
+        max-height: 65px;
+    }
+    
+    /* Controles del carrusel */
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+        border-width: 2px;
+    }
+    
+    .carousel-info {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        top: 0.7rem;
+        right: 0.7rem;
+        border-radius: 8px;
+    }
+    
+    /* Iconos más pequeños */
+    .certificado-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .certificado-icon i {
+        font-size: 1.4rem;
+    }
+}
+
+/* Media query adicional para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .about-card,
+    .vm-card,
+    .service-card,
+    .testimonio-card,
+    .certificado-card {
+        padding: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .cliente-logo {
+        height: 60px;
+        max-width: 100px;
+        padding: 0.5rem;
+    }
+    
+    .cliente-logo img {
+        max-height: 40px;
+    }
+    
+    .clientes-grid,
+    .clientes-grid-adicional {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .testimonio-con-foto {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+    
+    .testimonio-foto img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .testimonio-texto {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .ssoma-logo-grande {
+        padding: 1rem;
+    }
+    
+    .ssoma-logo-grande img {
+        max-width: 120px;
+    }
+    
+    .testimonio-quote p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .about-card h3,
+    .vm-card h3,
+    .service-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.8rem;
     }
 }
