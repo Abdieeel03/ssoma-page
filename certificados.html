@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Certificado - SSOMA</title>
+    <meta name="description" content="Solicita tu certificado SSOMA ingresando tu número de DNI. Consulta y descarga tus certificados de capacitación en seguridad industrial.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <div class="logo-placeholder">
+                        <img src="./resources/img/logo2.png" alt="SSOMA Logo">
+                    </div>
+                    <!--<span class="company-name">SSOMA INVERSIONES</span>-->
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="certificados.html" class="nav-link active">Certificados</a></li>
+                    <li><a href="index.html#clientes" class="nav-link">Nuestros Clientes</a></li>
+                    <li><a href="index.html#footer" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="min-trabajo-logo">
+                <img src="./resources/img/min-trabajo.png" alt="Ministerio de Trabajo">
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Certificados Section -->
+        <section class="certificados-solicitud">
+            <div class="container">
+                <div class="certificados-content">
+                    <!-- Header de la página -->
+                    <div class="certificados-header">
+                        <h1 class="section-title">Solicitar Certificado</h1>
+                        <p class="section-subtitle">Ingresa tu número de DNI solicitar tu certificado de capacitación</p>
+                    </div>
+
+                    <!-- Formulario de solicitud -->
+                    <div class="certificados-form-container">
+                        <form class="certificados-form" id="certificadosForm">
+                            <div class="form-group">
+                                <label for="dni" class="form-label">
+                                    <i class="fas fa-id-card"></i>
+                                    Número de DNI
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="dni" 
+                                    name="dni" 
+                                    class="form-input" 
+                                    placeholder="Ingresa tu número de DNI (8 dígitos)"
+                                    maxlength="8"
+                                    pattern="[0-9]{8}"
+                                    required
+                                >
+                                <span class="form-help">Ingresa solo números, sin espacios ni guiones</span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary certificados-btn" disabled>
+                                <i class="fas fa-clock"></i>
+                                Próximamente Disponible
+                            </button>
+                        </form>
+
+                        <!-- Mensaje de resultado -->
+                        <div class="certificados-result" id="certificadosResult" style="display: none;">
+                            <div class="result-message">
+                                <i class="fas fa-info-circle"></i>
+                                <p id="resultText"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Previsualización del certificado -->
+                    <div class="certificados-preview">
+                        <h3 class="preview-title">
+                            <i class="fas fa-eye"></i>
+                            Ejemplo de Certificado
+                        </h3>
+                        <p class="preview-description">
+                            A continuación puedes ver un ejemplo del tipo de certificado que recibirás una vez completada tu capacitación:
+                        </p>
+                        
+                        <div class="pdf-preview-container">
+                            <div class="pdf-viewer">
+                                <embed 
+                                    src="./resources/pdf/certificado-ejemplo.pdf" 
+                                    type="application/pdf" 
+                                    class="pdf-embed"
+                                    title="Certificado de Ejemplo SSOMA"
+                                >
+                                <div class="pdf-fallback">
+                                    <div class="fallback-content">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <h4>Certificado de Ejemplo</h4>
+                                        <p>Tu navegador no puede mostrar el PDF directamente.</p>
+                                        <a href="./resources/pdf/certificado-ejemplo.pdf" target="_blank" class="btn btn-secondary">
+                                            <i class="fas fa-download"></i>
+                                            Descargar Ejemplo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="./resources/img/logo.png" alt="SSOMA Logo">
+                        <span class="company-name">SSOMA INVERSIONES</span>
+                    </div>
+                    <p>Líderes en seguridad industrial, comprometidos con proteger tu empresa y tu equipo.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Datos de Contacto</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>[WhatsApp]</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>[Teléfono]</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>[Correo]</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-user"></i>
+                                <span>[Nombre]</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>[Horario de Atención]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="index.html#servicios">Supervisión de Proyectos</a></li>
+                            <li><a href="index.html#servicios">Consultoría</a></li>
+                            <li><a href="index.html#servicios">Asesoría ISO</a></li>
+                            <li><a href="index.html#servicios">Auditorías</a></li>
+                            <li><a href="index.html#servicios">Capacitaciones</a></li>
+                            <li><a href="index.html#servicios">Salud Ocupacional</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="index.html#nosotros">Nosotros</a></li>
+                            <li><a href="certificados.html">Certificados</a></li>
+                            <li><a href="index.html#clientes">Nuestros Clientes</a></li>
+                            <li><a href="index.html#footer">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SSOMA INVERSIONES. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+    <script>
+        // Funcionalidad específica para la página de certificados
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('certificadosForm');
+            const dniInput = document.getElementById('dni');
+            const resultDiv = document.getElementById('certificadosResult');
+            const resultText = document.getElementById('resultText');
+
+            // Validación en tiempo real del DNI
+            dniInput.addEventListener('input', function() {
+                // Solo permitir números
+                this.value = this.value.replace(/[^0-9]/g, '');
+                
+                // Limitar a 8 dígitos
+                if (this.value.length > 8) {
+                    this.value = this.value.slice(0, 8);
+                }
+            });
+
+            // Manejo del envío del formulario - DESACTIVADO TEMPORALMENTE
+            /*
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const dni = dniInput.value.trim();
+                
+                if (dni.length !== 8) {
+                    showResult('error', 'Por favor, ingresa un DNI válido de 8 dígitos.');
+                    return;
+                }
+                
+                // Simular procesamiento
+                showResult('loading', 'Buscando certificados...');
+                
+                setTimeout(() => {
+                    // Aquí iría la lógica real de búsqueda
+                    showResult('success', `Solicitud recibida para DNI: ${dni}. Te contactaremos pronto si encontramos certificados asociados.`);
+                    form.reset();
+                }, 2000);
+            });
+            */
+
+            // Mensaje informativo sobre la funcionalidad
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showResult('info', 'Esta funcionalidad estará disponible próximamente. Mientras tanto, puedes contactarnos directamente.');
+            });
+
+            function showResult(type, message) {
+                resultText.textContent = message;
+                resultDiv.className = `certificados-result ${type}`;
+                resultDiv.style.display = 'block';
+                
+                // Auto-ocultar después de 5 segundos para mensajes de éxito
+                if (type === 'success') {
+                    setTimeout(() => {
+                        resultDiv.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
